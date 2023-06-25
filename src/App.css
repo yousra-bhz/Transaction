@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background-color: #194a7a;
+}
+button , input , input::placeholder{
+  font-family: 'Poppins' , sans-serif;
+}
+ .big{
+  width: 90%;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
+  gap: 5rem;
+ }
 
-.App-link {
-  color: #61dafb;
-}
+ .big .right{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: start;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ .card-to-add , .card-to-transaction{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #003f5c;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  height: 30rem;
+  background-color: #a3b7ca;
+ }
+
+  .card-to-add input , .card-to-transaction input{
+    width: 50%;
+    border: none;
+    background-color: #7593af;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    opacity: 0.9;
   }
-  to {
-    transform: rotate(360deg);
+  .card-to-add button , .card-to-transaction button , .btn{
+    width: 25%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #1e3d58;
+    color: white;
+    transition: all 1s ease;
+  }
+
+  button:hover {
+    background-color: #ff8531;
+    transform: scale(1.1);
+  }
+
+  
+  .card-to-add input::placeholder , .card-to-transaction input::placeholder{
+    color: white;
+  }
+  
+
+  .buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .buttons button{
+    background-color: #00202e;
+    transition: all 1s ease;
+  }
+  .buttons button:hover{
+    background-color: #ff8531;
+    transform: scale(1.1);
+  }
+.interface{
+  visibility: hidden;
+  background-color: #a3b7ca;
+  width: 100%;
+  padding: 1rem ;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  border: 3px solid #003f5c;
+}
+.interface .users:hover{
+  background-color: #2c4875;
+}
+
+.interface .users{
+  font-size: 1rem;
+  background-color: #057dcd;
+  border-radius: 0.5rem;
+  color: white;
+  width: 20%;
+  border: 3px solid  #003f5c;
+  padding: 1rem 2rem;
+  transition: 1s;
+}
+
+.interface .users h1{
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width : 768px) {
+  .big .right{
+    display: flex;
+    flex-direction: column;
+  }
+  .card-to-add , .card-to-transaction{
+    width: 100%;
+  }
+  .card-to-add input , .card-to-transaction input{
+    width: 90%;
+  }
+  .card-to-add button , .card-to-transaction button , .btn{
+    width: 50%;
+  }
+  .buttons button{
+    width: 40%;
+  }
+  .interface{
+    display: flex;
+    flex-direction: column;
+  }
+  .interface .users{
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 }
