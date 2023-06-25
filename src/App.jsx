@@ -57,7 +57,7 @@ function App() {
           else if(user.credite === 0){
             alert('votre credit est null');
           } else {
-            alert('Insufficient credit');
+            alert(' credit insufissant');
             return user;
           }
         }
