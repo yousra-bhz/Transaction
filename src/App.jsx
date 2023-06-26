@@ -9,7 +9,8 @@ function App() {
   const [price, setPrice] = useState(0);
   const [usere, setUsere] = useState("");
   const [credit, setCredit] = useState(0);
-  const [style , setStyle] = useState("hidden");
+  const [style , setStyle] = useState(false);
+  const [supression , setSupression] = useState("");
 
   /* Handling the receiver */
   const handleReceiver = (event) => {
@@ -82,6 +83,12 @@ function App() {
     );
   }
 
+  
+  /*delet user */
+  const deleteUser =  () => {
+    setUsertab(usertab.filter((user) => (user.userName !== supression )));
+  }
+
   return (
     <div className="big">
        <div className="right">
@@ -97,12 +104,17 @@ function App() {
         <button onClick={retrieve}>Submit the sender</button>
         <button onClick={transform}>Submit the transaction</button>
       </div>
+         <div className="card-to-transaction">
+        <h1>Delet User</h1>
+        <input placeholder="delete user ..." onChange={(event) =>{setSupression(event.target.value)} } />
+        <button onClick={deleteUser}>DELET USER</button>
+      </div>
       </div> 
       <div className="buttons">
-      <button  className="btn" onClick={() => setStyle("visible")}>See All Users</button>
-      <button  className="btn" onClick={() => setStyle("hidden")}>Hide All Users</button>
+      <button  className="btn" onClick={() => setStyle(true)}>See All Users</button>
+      <button  className="btn" onClick={() => setStyle(false)}>Hide All Users</button>
       </div>
-      <div className="interface" style={{visibility:style}}>
+      <div className="interface" style={{visibility:style ? "visisble" ; "hidden"}}>
         {usertab.map((user) => {return <Compo userName = {user.userName}  credite= {user.credite} />}
 
         )}
