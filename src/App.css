@@ -64,7 +64,7 @@ button , input , input::placeholder{
   }
 .btn{
   width : 30%;
-
+}
   button:hover {
     background-color: #ff8531;
     transform: scale(1.1);

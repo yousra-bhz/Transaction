@@ -114,10 +114,8 @@ function App() {
       <button  className="btn" onClick={() => setStyle(true)}>See All Users</button>
       <button  className="btn" onClick={() => setStyle(false)}>Hide All Users</button>
       </div>
-      <div className="interface" style={{visibility:style ? "visisble" ; "hidden"}}>
-        {usertab.map((user) => {return <Compo userName = {user.userName}  credite= {user.credite} />}
-
-        )}
+      <div className="interface" style={{visibility:style ? "visible" : "hidden"}}>
+        {usertab.map((user) => {return <Compo userName = {user.userName}  credite= {user.credite} />})}
       </div>
     </div>
   );
